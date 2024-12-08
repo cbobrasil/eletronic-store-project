@@ -1,0 +1,76 @@
+version: 2
+
+models:
+  - name: customers_bronze
+    description: "Bronze layer model containing cleaned and minimally transformed customer data."
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer."
+      - name: name
+        description: "Name of the customer."
+      - name: email
+        description: "Email address of the customer."
+      - name: phone
+        description: "Phone number of the customer."
+      - name: address
+        description: "Address of the customer."
+      - name: registration_date
+        description: "Date the customer registered."
+
+  - name: products_bronze
+    description: "Bronze layer model containing cleaned and minimally transformed product data."
+    columns:
+      - name: product_id
+        description: "Unique identifier for each product."
+      - name: name
+        description: "Name of the product."
+      - name: category
+        description: "Category to which the product belongs."
+      - name: price
+        description: "Price of the product."
+      - name: stock
+        description: "Current stock of the product."
+      - name: supplier_id
+        description: "Unique identifier of the supplier providing the product."
+
+  - name: suppliers_bronze
+    description: "Bronze layer model containing cleaned and minimally transformed supplier data."
+    columns:
+      - name: supplier_id
+        description: "Unique identifier for each supplier."
+      - name: supplier_name
+        description: "Name of the supplier."
+      - name: contact_email
+        description: "Contact email of the supplier."
+      - name: phone
+        description: "Phone number of the supplier."
+      - name: address
+        description: "Address of the supplier."
+
+  - name: transactions_bronze
+    description: "Bronze layer model containing cleaned and minimally transformed transaction data."
+    columns:
+      - name: transaction_id
+        description: "Unique identifier for each transaction."
+      - name: customer_id
+        description: "Unique identifier for the customer associated with the transaction."
+      - name: transaction_date
+        description: "Date the transaction occurred."
+      - name: total_amount
+        description: "Total amount of the transaction."
+
+  - name: transaction_items_bronze
+    description: "Bronze layer model containing cleaned and minimally transformed transaction item data."
+    columns:
+      - name: item_id
+        description: "Unique identifier for each transaction item."
+      - name: transaction_id
+        description: "Unique identifier for the transaction the item belongs to."
+      - name: product_id
+        description: "Unique identifier of the product associated with the transaction item."
+      - name: quantity
+        description: "Quantity of the product in the transaction item."
+      - name: unit_price
+        description: "Price per unit of the product in the transaction item."
+      - name: subtotal
+        description: "Subtotal amount for the transaction item (quantity * unit_price)."

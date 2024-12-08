@@ -1,0 +1,13 @@
+version: 2
+
+seeds:
+  - name: customers
+    description: "Table containing customer information."
+  - name: products
+    description: "Table containing product information."
+  - name: suppliers
+    description: "Table containing supplier information."
+  - name: transactions
+    description: "Table containing information about completed transactions."
+  - name: transaction_items
+    description: "Table containing information about items within each transaction."
