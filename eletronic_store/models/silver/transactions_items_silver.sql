@@ -3,7 +3,7 @@
 ) }}
 
 SELECT
-    item_id,
+    md5(cast(item_id as string)) as  transaction_item_id,
     transaction_id,
     product_id,
     quantity,
